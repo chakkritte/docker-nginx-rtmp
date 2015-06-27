@@ -10,14 +10,14 @@ RUN \
   libpcre3-dev libssl-dev unzip wget nano 
 
 RUN cd /root && \
-  wget http://nginx.org/download/nginx-1.7.9.tar.gz && \
+  wget http://nginx.org/download/nginx-1.9.2.tar.gz && \
   wget https://github.com/arut/nginx-rtmp-module/archive/master.zip
   
 RUN cd /root && \
-  tar -zxvf nginx-1.7.9.tar.gz && \
+  tar -zxvf nginx-1.9.2.tar.gz && \
   unzip master.zip
   
-RUN cd /root/nginx-1.7.9 && \
+RUN cd /root/nginx-1.9.2 && \
   ./configure --add-module=../nginx-rtmp-module-master && \
   make && \
   make install
@@ -38,4 +38,3 @@ WORKDIR /usr/local/nginx
 
 # Define default command.
 CMD ["/usr/local/nginx/sbin/nginx","-c","/usr/local/nginx/conf/nginx.conf"]
-
