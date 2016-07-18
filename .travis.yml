@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - docker build -t chakkritte/docker-nginx-rtmp/
+  - docker build -t chakkritte/docker-nginx-rtmp .
   - docker run -d -p 80:80 -p 1935:1935 chakkritte/docker-nginx-rtmp
   
   - docker ps -a
