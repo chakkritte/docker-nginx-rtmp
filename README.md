@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/chakkritte/docker-nginx-rtmp.svg?branch=master)](https://travis-ci.org/chakkritte/docker-nginx-rtmp)
+
+
 # Docker-nginx-rtmp
 
 #Download#
