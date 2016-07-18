@@ -1,5 +1,5 @@
 # Pull base image.
-FROM ubuntu:14.04.2
+FROM ubuntu:14.04.4
 
 # Install Nginx.
 RUN \
@@ -10,17 +10,19 @@ RUN \
   libpcre3-dev libssl-dev unzip wget nano 
 
 RUN cd /root && \
-  wget http://nginx.org/download/nginx-1.9.2.tar.gz && \
+  wget http://nginx.org/download/nginx-1.10.1.tar.gz && \
   wget https://github.com/arut/nginx-rtmp-module/archive/master.zip
   
 RUN cd /root && \
-  tar -zxvf nginx-1.9.2.tar.gz && \
+  tar -zxvf nginx-1.10.1.tar.gz  && \
   unzip master.zip
   
-RUN cd /root/nginx-1.9.2 && \
+RUN cd /root/nginx-1.10.1 && \
   ./configure --add-module=../nginx-rtmp-module-master && \
   make && \
   make install
+
+ADD nginx.conf /usr/local/nginx/conf/nginx.conf
   
 RUN \
   wget https://raw.github.com/chakkritte/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx && \
