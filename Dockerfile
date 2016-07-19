@@ -33,7 +33,9 @@ RUN \
 # Expose ports.
 EXPOSE 80
 EXPOSE 443
-EXPOSE 1395 
+EXPOSE 1395
+
+VOLUME ["/usr/local/nginx/html"]
   
 # Define working directory.
 WORKDIR /usr/local/nginx
