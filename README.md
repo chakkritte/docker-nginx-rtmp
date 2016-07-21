@@ -9,7 +9,8 @@
 
 #Run#
 
-    docker run -d -p 80:80 -p 1935:1935 chakkritte/docker-nginx-rtmp
+    mkdir -p /var/www/demo/html
+    docker run -d -p 80:80 -p 1935:1935 -v /var/www/demo/html:/usr/local/nginx/html  chakkritte/docker-nginx-rtmp
 
 #Live#
 
